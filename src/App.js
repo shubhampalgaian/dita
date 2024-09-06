@@ -1,4 +1,4 @@
-import './App.scss'; // Add custom styles here
+import './App.scss';
 
 import React, { useState } from "react";
 import { Layout, Menu, Button, Divider } from "antd";
@@ -34,17 +34,17 @@ export default function App() {
           {/* Logo */}
           <div className={`custom-icon w-full ${collapsed ? "collapsed-logo" : ""}`}>  <Menu theme="dark" mode="inline" defaultSelectedKeys={[]}>
             <Menu.Item key="1" icon={<Icon iconName={"Logo"} />}>
-                
-              </Menu.Item>
-            </Menu>
+
+            </Menu.Item>
+          </Menu>
           </div>
 
           {/* Menu Items */}
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={[]} className='haha2'>
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={[]} className='menu-icons'>
             <Menu.Item key="1" icon={<HomeOutlined className='haha' />}>
               Home
             </Menu.Item>
-            <Menu.Item key="2" icon={<UserOutlined style={{width: '2em', height: '2em'}} />}>
+            <Menu.Item key="2" icon={<UserOutlined style={{ width: '2em', height: '2em' }} />}>
               Profile
             </Menu.Item>
             <Menu.Item key="3" icon={<SettingOutlined />}>
@@ -52,22 +52,31 @@ export default function App() {
             </Menu.Item>
           </Menu>
 
-          {/* <Divider style={{ color: 'white', border: '1px solid', position: 'relative', transform: 'translateX(-50%)', left: '50%', width: '95%' }} /> */}
+          <div style={{padding: '0 16px'}}>
+            <Divider style={{ color: 'white', border: '1px solid', position: 'relative', transform: 'translateX(-50%)', left: '50%', width: '100%' }} />
+          </div>
         </div>
 
         {/* Bottom Sections */}
-        <div className="custom-icon-bottom">
+        <div className="custom-icon-bottom" style={{padding: '0 16px', marginBottom: '12px'}}>
           <Menu theme="dark" mode="inline" defaultSelectedKeys={[]} className='bottom-menu'>
-              <Menu.Item key="4" icon={<Icon iconName={"Profile"} />}>
-                
-              </Menu.Item>
+            <Menu.Item key="4" icon={<Icon iconName={"Profile"} />}>
 
-              <Divider />
+            </Menu.Item>
+          </Menu>
 
-              <Menu.Item key="5" icon={<Icon iconName={"Mobius"} />}>
-                
-              </Menu.Item>
-            </Menu>
+          <div style={{
+            padding: collapsed ? "0 0 !important" : "0 16px !important"
+          }}>
+            <Divider style={{ color: 'white', border: '1px solid', position: 'relative', transform: 'translateX(-50%)', left: '50%', width: '100%', margin: collapsed ? '0 !important' : '' }} />
+          </div>
+
+          <Menu theme="dark" mode="inline" defaultSelectedKeys={[]} className='bottom-menu'>
+
+            <Menu.Item key="5" icon={<Icon iconName={"Mobius"} />}>
+
+            </Menu.Item>
+          </Menu>
         </div>
       </Sider>
     </Layout>
